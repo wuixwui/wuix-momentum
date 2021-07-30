@@ -4,17 +4,14 @@ const title = document.querySelector(".hello h1")
 console.dir(title)
 
 function handleTitleClick() {
-    // 현재의 html <h1>의 컬러를 변수에 저장합니다.
-    const currentColor = title.style.color;
-    // 바꿀 수 있는 컬러의 값을 담을 변수 newColor를 선언합니다.
-    let newColor;
-    if (currentColor === "blue") {
-        newColor = "tomato";
-    }else {
-        newColor = "blue";
+    // 변수 선언은 코드를 깔끔하게 해주고 오타로 인해 생기는 오류를 줄여 줄 수 있다.
+    const clickedClass = "clicked"
+    if (title.className === clickedClass){
+        title.className = "";
+        //h1 에 class가 존재할 경우 해당 클래스를 무시 및 삭제 -> 지정한 클래스를 넣어버린다.
+    } else {
+        title.className = clickedClass;
     }
-    // 조건문을 돌고 newColor를 h1에 넣어줍니다.
-    title.style.color = newColor;
 };
 
 title.addEventListener("click", handleTitleClick);
