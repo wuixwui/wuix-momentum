@@ -4,17 +4,9 @@ const title = document.querySelector(".hello h1")
 console.dir(title)
 
 function handleTitleClick() {
-    // 변수 선언은 코드를 깔끔하게 해주고 오타로 인해 생기는 오류를 줄여 줄 수 있다.
-    const clickedClass = "clicked"
-    //classList 함수를 사용하면 모든 class들이 변경되는 것을 방지할 수 있다.
-        // class 중에 ()안에 들어간 class가 있는 지 확인한다.
-    if (title.classList.contains(clickedClass)) {
-        // 해당 class 삭제
-        title.classList.remove(clickedClass);
-    } else {
-        // 해당 class 추가
-        title.classList.add(clickedClass);
-    }
+    // toggle 은 class name이 있는지 확인하고 있다면 삭제, 없다면 추가의 기능을 해준다.
+    // classList의 contains,remove,add를 한번에 해결할 수 있다.
+    title.classList.toggle("clicked");
 };
 
 title.addEventListener("click", handleTitleClick);
