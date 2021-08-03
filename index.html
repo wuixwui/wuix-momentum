@@ -4,9 +4,42 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- RESET -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
+    />
+    <!-- STYLES -->
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- JS -->
     <script src="app.js" defer></script>
     <title>WUIX MOMENTUM</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <h1 class="title">RANDOM NUMBER GAME</h1>
+      <form action="#" id="guessing-number">
+        <p>Generate a number between 0 and</p>
+        <input type="number" name="user-input-number" id="max-number" />
+      </form>
+
+      <form action="#" id="input-number">
+        <p>Guess the number</p>
+        <input type="number" placeholder="Enter a number" />
+        <button>PLAY</button>
+      </form>
+
+      <div class="result hidden">
+        <div class="you">
+          <span>You shose :&nbsp</span>
+          <span class="your-number">0</span>
+        </div>
+        <div class="machine">
+          <span>Machine shose :&nbsp</span>
+          <span class="machine-number">0</span>
+        </div>
+        <p class="result--message">YOU LOST!</p>
+      </div>
+    </div>
+  </body>
 </html>
