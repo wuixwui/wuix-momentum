@@ -32,7 +32,7 @@ function RandomGameResult(event) {
   machine.innerText = Math.floor(Math.random() * EnteredMaxNumber.value);
   gameResult.classList.remove("hidden");
 
-  if (you.innerText == machine.innerText) {
+  if (you.innerText === machine.innerText) {
     gameResult.querySelector("p").innerText = "YOU WIN!";
   } else {
     gameResult.querySelector("p").innerText = "YOU LOST!";
