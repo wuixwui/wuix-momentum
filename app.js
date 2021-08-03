@@ -1,12 +1,43 @@
-const title = document.querySelector(".hello h1")
+const title = document.querySelector(".container .title");
+title.innerText = "RANDOM\r\nNUMBER\r\nGAME";
 
-// h1에 사용할 수 있는 event들을 console창에서 확인할 수 있다.
-console.dir(title)
+const maxNumber = document.getElementById("guessing-number");
+const EnteredMaxNumber = document.getElementById("max-number");
 
-function handleTitleClick() {
-    // toggle 은 class name이 있는지 확인하고 있다면 삭제, 없다면 추가의 기능을 해준다.
-    // classList의 contains,remove,add를 한번에 해결할 수 있다.
-    title.classList.toggle("clicked");
-};
+const userNumber = document.getElementById("input-number");
+const inputUserNumber = userNumber.querySelector("input");
+const gameResult = document.querySelector(".result");
 
-title.addEventListener("click", handleTitleClick);
+function RandomGemeStart(event) {
+  event.preventDefault();
+  if (EnteredMaxNumber.value < 0) {
+    title.innerText = "TRY AGAIN!";
+    maxNumber.querySelector("p").innerText = "Please enter a positive number";
+  } else {
+    title.innerText = "GUESS\r\nTHE NUMBER";
+    localStorage.setItem("enteredNumber", EnteredMaxNumber.value);
+    userNumber.querySelector(
+      "p"
+    ).innerText = `enter a number between 0 and ${EnteredMaxNumber.value}`;
+    maxNumber.classList.add("hidden");
+  }
+}
+
+function RandomGameResult(event) {
+  event.preventDefault();
+  const machine = gameResult.querySelector(".machine-number");
+  const you = gameResult.querySelector(".your-number");
+
+  you.innerText = inputUserNumber.value;
+  machine.innerText = Math.floor(Math.random() * EnteredMaxNumber.value);
+  gameResult.classList.remove("hidden");
+
+  if (you.innerText === machine.innerText) {
+    gameResult.querySelector("p").innerText = "YOU WIN!";
+  } else {
+    gameResult.querySelector("p").innerText = "YOU LOST!";
+  }
+}
+
+maxNumber.addEventListener("submit", RandomGemeStart);
+userNumber.addEventListener("submit", RandomGameResult);
