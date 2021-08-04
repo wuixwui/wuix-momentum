@@ -1,0 +1,48 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #901e1e;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 500px;
+}
+
+.container .title {
+  margin-bottom: 2rem;
+  line-height: 1.3;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.container .timer {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffc918;
+}
