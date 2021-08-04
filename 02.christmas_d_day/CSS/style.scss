@@ -1,0 +1,31 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(144, 30, 30);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  .title {
+    margin-bottom: 2rem;
+    line-height: 1.3;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  .timer {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgb(255, 201, 24);
+  }
+}
